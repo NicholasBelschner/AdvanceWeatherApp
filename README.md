@@ -1,3 +1,5 @@
+<img width="1728" alt="Screenshot 2025-03-22 at 7 48 35 AM" src="https://github.com/user-attachments/assets/23f28155-d3fb-4cb4-aeea-4110451f9bc6" />
+
 # 🌦️ Advanced Weather App
 
 A futuristic weather application featuring a 3D interactive globe, real-time weather data, and AI-powered predictions.

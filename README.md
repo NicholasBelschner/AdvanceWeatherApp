@@ -1,96 +1,153 @@
-# Futuristic Weather App
+# 🌦️ Advanced Weather App
 
-A modern, AI-powered weather application with an immersive user interface and intelligent predictions.
+A futuristic weather application featuring a 3D interactive globe, real-time weather data, and AI-powered predictions.
 
-## Features
+## 🛠️ Tech Stack
 
-- Real-time weather data visualization
-- AI-enhanced weather predictions
-- Interactive 2D/3D weather maps
-- Voice and gesture controls
-- Personalized weather alerts
-- Responsive and futuristic UI design
+**Frontend:** React, TypeScript, Three.js, Material-UI, Framer Motion  
+**Backend:** Flask, TensorFlow, Python 3.11  
+**Database:** MongoDB  
+**APIs:** OpenWeather API
 
-## Tech Stack
+## 🚀 Quick Setup Guide
 
-### Frontend
-- React with TypeScript
-- Material-UI
-- D3.js/Three.js for visualizations
-- Hammer.js for gesture controls
-- Web Speech API for voice commands
+### 1️⃣ Clone & Navigate
+```bash
+git clone https://github.com/NicholasBelschner/AdvanceWeatherApp.git
+cd AdvanceWeatherApp
+```
 
-### Backend
-- Flask (Python)
-- TensorFlow for AI predictions
-- MongoDB for data storage
-- OpenWeatherMap API integration
+### 2️⃣ Backend Setup
+```bash
+cd backend
+python -m venv venv
 
-## Setup Instructions
+# Activate virtual environment
+# For Windows:
+venv\Scripts\activate
+# For macOS/Linux:
+source venv/bin/activate
 
-### Prerequisites
-- Python 3.8+
-- Node.js 14+
-- MongoDB
-- OpenWeatherMap API key
+# Install dependencies
+pip install -r requirements.txt
 
-### Backend Setup
-1. Navigate to the backend directory:
-   ```bash
-   cd backend
-   ```
+# Create .env file
+cp .env.example .env
+```
 
-2. Activate the virtual environment:
-   ```bash
-   source ../venv/bin/activate
-   ```
+Inside `backend/.env`, add:
+```env
+FLASK_APP=app.py
+FLASK_ENV=development
+OPENWEATHER_API_KEY=your-api-key-here
+MONGODB_URI=your-mongodb-uri
+```
 
-3. Install dependencies:
-   ```bash
-   pip install -r ../requirements.txt
-   ```
+### 3️⃣ Frontend Setup
+```bash
+cd ../frontend
 
-4. Configure environment variables:
-   - Copy `.env.example` to `.env`
-   - Update the variables with your API keys and configurations
+# Install dependencies
+npm install
 
-5. Run the Flask server:
-   ```bash
-   flask run
-   ```
+# Create .env file
+cp .env.example .env
+```
 
-### Frontend Setup
-1. Navigate to the frontend directory:
-   ```bash
-   cd frontend
-   ```
+Inside `frontend/.env`, add:
+```env
+REACT_APP_API_URL=http://localhost:5000
+REACT_APP_WEATHER_API_KEY=your-api-key-here
+```
 
-2. Install dependencies:
-   ```bash
-   npm install
-   ```
+### 4️⃣ Start the Application
 
-3. Start the development server:
-   ```bash
-   npm start
-   ```
+Start Backend (Terminal 1):
+```bash
+cd backend
+source venv/bin/activate  # or venv\Scripts\activate for Windows
+python app.py
+```
 
-## Development
+Start Frontend (Terminal 2):
+```bash
+cd frontend
+npm start
+```
 
-### Running Tests
-- Backend: `pytest`
-- Frontend: `npm test`
+✅ App is now running!
+- Frontend: http://localhost:3000
+- Backend: http://localhost:5000
 
-### Building for Production
-- Frontend: `npm run build`
-- Backend: Configure with Gunicorn
+## 🔧 Common Issues & Solutions
 
-## Contributing
-1. Fork the repository
-2. Create a feature branch
-3. Commit your changes
-4. Push to the branch
-5. Create a Pull Request
+### Backend Issues
+```bash
+# If dependencies fail to install
+pip install --upgrade pip
+pip install -r requirements.txt
 
-## License
-MIT License 
+# If virtual environment is corrupted
+rm -rf venv
+python -m venv venv
+source venv/bin/activate
+pip install -r requirements.txt
+```
+
+### Frontend Issues
+```bash
+# If node_modules issues occur
+rm -rf node_modules package-lock.json
+npm install
+
+# If port 3000 is in use
+# For Windows:
+netstat -ano | findstr :3000
+taskkill /PID <PID> /F
+# For macOS/Linux:
+lsof -i :3000
+kill -9 <PID>
+```
+
+## 📝 API Keys Setup
+
+1. Get OpenWeather API Key:
+   - Sign up at https://openweathermap.org/api
+   - Copy your API key
+   - Add to both `.env` files
+
+2. Optional: MongoDB Setup
+   - Use local MongoDB or
+   - Create free cluster at MongoDB Atlas
+   - Add connection string to `backend/.env`
+
+## 🌟 Features
+
+- 🌍 Interactive 3D Earth visualization
+- 🌤️ Real-time weather data display
+- 🎨 Futuristic UI with animations
+- 📱 Responsive design
+- 🤖 AI-powered weather predictions
+- 🗣️ Voice command support
+
+## 🤝 Contributing
+
+1. Fork repo
+2. Create feature branch (`git checkout -b feature/Amazing`)
+3. Commit changes (`git commit -m 'Add Amazing Feature'`)
+4. Push branch (`git push origin feature/Amazing`)
+5. Open Pull Request
+
+## 📜 License
+
+MIT License - See [LICENSE](LICENSE) file
+
+## 👤 Author
+
+Nicholas Belschner
+
+## 💡 Need Help?
+
+- Check common issues above
+- Open an issue
+- Contact: [Your Contact Info] 
